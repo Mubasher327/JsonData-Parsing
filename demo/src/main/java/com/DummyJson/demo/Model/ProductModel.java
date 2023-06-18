@@ -13,24 +13,24 @@ import java.util.List;
 public class ProductModel {
     private long id;
     private String title;
-    private String discription;
+    private String description;
     private double price;
     private float rating;
     private int stock;
     private String brand;
     private String category;
-    private List<String> thumbNails;
+    private String thumbnail;
     private List<String> images;
 public ProductModel (Product product){
     this.setId(product.getId());
     this.setTitle(product.getTitle());
-    this.setDiscription(product.getDiscription());
+    this.setDescription(product.getDescription());
     this.setPrice(product.getPrice());
     this.setRating(product.getRating());
     this.setStock(product.getStock());
     this.setBrand(product.getBrand());
     this.setCategory(product.getCategory());
-    this.setThumbNails(product.getThumbNails());
+    this.setThumbnail(product.getThumbnail());
     this.setImages(product.getImages());
 }
 
@@ -38,13 +38,13 @@ public Product dissamble (){
     Product product=new Product();
     product.setId(id);
     product.setTitle(title);
-    product.setDiscription(discription);
+    product.setDescription(description);
     product.setPrice(price);
     product.setRating(rating);
     product.setStock(stock);
     product.setBrand(brand);
     product.setCategory(category);
-    product.setThumbNails(thumbNails);
+    product.setThumbnail(thumbnail);
     product.setImages(images);
     return product;
 

@@ -16,7 +16,7 @@ public class Product {
     @Column
     private String title;
     @Column
-    private String discription;
+    private String description;
     @Column
     private double price;
     @Column
@@ -28,7 +28,8 @@ public class Product {
     @Column
     private String category;
     @Column
-    private List<String> thumbNails;
+
+    private String thumbnail;
     @Column
     private List<String> images;
 
