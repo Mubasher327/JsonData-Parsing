@@ -28,7 +28,7 @@ public class Product {
     @Column
     private String category;
     @Column
-    private String thumbNails;
+    private List<String> thumbNails;
     @Column
     private List<String> images;
 

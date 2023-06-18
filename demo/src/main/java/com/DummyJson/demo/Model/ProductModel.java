@@ -19,7 +19,7 @@ public class ProductModel {
     private int stock;
     private String brand;
     private String category;
-    private String thumbNails;
+    private List<String> thumbNails;
     private List<String> images;
 public ProductModel (Product product){
     this.setId(product.getId());
