@@ -19,7 +19,7 @@ public class ProductService {
 
                 try {
                     // Step 1: Fetch JSON data from the API URL
-                    String apiUrl = "https://dummyjson.com/products/1";
+                    String apiUrl = "https://dummyjson.com/products";
                     String jsonData = fetchJsonData(apiUrl);
 
                     String[] responseParts = jsonData.split(",");
@@ -32,8 +32,8 @@ public class ProductService {
                     Dummy_Data.setId(Long.parseLong(responseParts[0]));
                     Dummy_Data.setTitle(responseParts[1]);
                     Dummy_Data.setDescription(responseParts[2]);
-                    Dummy_Data.setPrice(new BigDecimal(responseParts[3]));
-                    Dummy_Data.setRating(new BigDecimal(responseParts[4]));
+                    Dummy_Data.setPrice(Long.parseLong(responseParts[3]));
+                    Dummy_Data.setRating(Long.parseLong(responseParts[4]));
                     Dummy_Data.setStock(Integer.parseInt(responseParts[5]));
                     Dummy_Data.setBrand(responseParts[6]);
                     Dummy_Data.setCategory(responseParts[7]);

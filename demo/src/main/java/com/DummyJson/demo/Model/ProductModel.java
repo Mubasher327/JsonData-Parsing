@@ -14,8 +14,8 @@ public class ProductModel {
     private long id;
     private String title;
     private String description;
-    private BigDecimal price;
-    private BigDecimal rating;
+    private long price;
+    private long rating;
     private int stock;
     private String brand;
     private String category;
