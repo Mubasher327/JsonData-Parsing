@@ -1,17 +1,22 @@
 package com.DummyJson.demo.Entity;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.Data;
+import org.json.JSONPropertyIgnore;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @Entity
 @Data
+@JsonIgnoreProperties
 @Table(name= "product_table")
-public class Product {
+public class Products {
     @Id
+    @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long product_id;
     @Column
     private long id;
     @Column
@@ -19,9 +24,9 @@ public class Product {
     @Column
     private String description;
     @Column
-    private double price;
+    private BigDecimal price;
     @Column
-    private float rating;
+    private BigDecimal rating;
     @Column
     private int stock;
     @Column
@@ -30,7 +35,7 @@ public class Product {
     private String category;
     @Column
 
-    private String thumbnail;
+    private List<String> thumbnail;
     @Column
     private List<String> images;
 
