@@ -1,11 +1,11 @@
 package com.DummyJson.demo.Model;
 
-import com.DummyJson.demo.Entity.Product;
-import jakarta.persistence.Column;
+import com.DummyJson.demo.Entity.Products;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
 
+import java.math.BigDecimal;
 import java.util.List;
 @Component
 @Data
@@ -14,14 +14,14 @@ public class ProductModel {
     private long id;
     private String title;
     private String description;
-    private double price;
-    private float rating;
+    private BigDecimal price;
+    private BigDecimal rating;
     private int stock;
     private String brand;
     private String category;
-    private String thumbnail;
+    private List<String> thumbnail;
     private List<String> images;
-public ProductModel (Product product){
+public ProductModel (Products product){
     this.setId(product.getId());
     this.setTitle(product.getTitle());
     this.setDescription(product.getDescription());
@@ -34,8 +34,8 @@ public ProductModel (Product product){
     this.setImages(product.getImages());
 }
 
-public Product dissamble (){
-    Product product=new Product();
+public Products dissamble (){
+    Products product=new Products();
     product.setId(id);
     product.setTitle(title);
     product.setDescription(description);
