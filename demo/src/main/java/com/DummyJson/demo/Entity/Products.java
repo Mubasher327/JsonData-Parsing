@@ -24,9 +24,9 @@ public class Products {
     @Column
     private String description;
     @Column
-    private BigDecimal price;
+    private long price;
     @Column
-    private BigDecimal rating;
+    private long rating;
     @Column
     private int stock;
     @Column
