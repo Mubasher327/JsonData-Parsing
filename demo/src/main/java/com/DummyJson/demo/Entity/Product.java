@@ -1,5 +1,6 @@
 package com.DummyJson.demo.Entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.Data;
 

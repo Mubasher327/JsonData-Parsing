@@ -16,21 +16,21 @@ public class ProductService {
     @Autowired
     private ProductRepo productRepo;
 
-        public ProductModel addDummy(ProductModel productModel) {
-//            RestTemplate restTemplate = new RestTemplate();
-//            String apiUrl = "https://dummyjson.com/products";
-//
-//            ResponseEntity<Product[]> responseEntity = restTemplate.getForEntity(apiUrl, Product[].class);
-//            if (responseEntity.getStatusCode().is2xxSuccessful()) {
-//                Product[] dummyDataArray = responseEntity.getBody();
-//
-//                if (dummyDataArray != null) {
-//                    List<Product> dummyDataList = Arrays.asList(dummyDataArray);
-//
-//                    productRepo.saveAll(dummyDataList);
-//                }
-//            }
-            return new ProductModel(productRepo.save(productModel.dissamble()));
+        public void addDummy() {
+            RestTemplate restTemplate = new RestTemplate();
+            String apiUrl = "https://dummyjson.com/products";
+
+            ResponseEntity<Product[]> responseEntity = restTemplate.getForEntity(apiUrl, Product[].class);
+            if (responseEntity.getStatusCode().is2xxSuccessful()) {
+                Product[] dummyDataArray = responseEntity.getBody();
+
+                if (dummyDataArray != null) {
+                    List<Product> dummyDataList = Arrays.asList(dummyDataArray);
+
+                    productRepo.saveAll(dummyDataList);
+                }
+            }
+            //   return new ProductModel(productRepo.save(productModel.dissamble()));
         }
     }
 
