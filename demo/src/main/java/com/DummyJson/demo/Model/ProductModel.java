@@ -11,12 +11,13 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 public class ProductModel {
-    private long id;
+    private String id;
     private String title;
     private String description;
-    private long price;
-    private long rating;
-    private int stock;
+    private String price;
+    private String discountPercentage;
+    private String rating;
+    private String stock;
     private String brand;
     private String category;
     private List<String> thumbnail;
@@ -26,6 +27,7 @@ public ProductModel (Products product){
     this.setTitle(product.getTitle());
     this.setDescription(product.getDescription());
     this.setPrice(product.getPrice());
+    this.setDiscountPercentage(product.getDiscountPercentage());
     this.setRating(product.getRating());
     this.setStock(product.getStock());
     this.setBrand(product.getBrand());
@@ -40,6 +42,7 @@ public Products dissamble (){
     product.setTitle(title);
     product.setDescription(description);
     product.setPrice(price);
+    product.setDiscountPercentage(discountPercentage);
     product.setRating(rating);
     product.setStock(stock);
     product.setBrand(brand);

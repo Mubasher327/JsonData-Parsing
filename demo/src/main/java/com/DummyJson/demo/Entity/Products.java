@@ -18,17 +18,19 @@ public class Products {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long product_id;
     @Column
-    private long id;
+    private String  id;
     @Column
     private String title;
     @Column
     private String description;
     @Column
-    private long price;
+    private String price;
     @Column
-    private long rating;
+    private String discountPercentage;
     @Column
-    private int stock;
+    private String rating;
+    @Column
+    private String stock;
     @Column
     private String brand;
     @Column

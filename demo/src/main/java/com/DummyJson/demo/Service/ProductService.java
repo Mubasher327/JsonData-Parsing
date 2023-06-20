@@ -29,22 +29,24 @@ public class ProductService {
 
                     Products Dummy_Data = new Products();
 
-                    Dummy_Data.setId(Long.parseLong(responseParts[0]));
-                    Dummy_Data.setTitle(responseParts[1]);
-                    Dummy_Data.setDescription(responseParts[2]);
-                    Dummy_Data.setPrice(Long.parseLong(responseParts[3]));
-                    Dummy_Data.setRating(Long.parseLong(responseParts[4]));
-                    Dummy_Data.setStock(Integer.parseInt(responseParts[5]));
-                    Dummy_Data.setBrand(responseParts[6]);
-                    Dummy_Data.setCategory(responseParts[7]);
+                    Dummy_Data.setId((responseParts[0].split(":")[1].trim()));
+                    Dummy_Data.setTitle(responseParts[1].split(":")[1].trim());
+                    Dummy_Data.setDescription(responseParts[2].split(":")[1].trim());
+                    Dummy_Data.setPrice((responseParts[3]).split(":")[1].trim());
+                    Dummy_Data.setDiscountPercentage(responseParts[4].split(":")[1].trim());
+                    Dummy_Data.setRating((responseParts[5]).split(":")[1].trim());
+                    Dummy_Data.setStock((responseParts[6]).split(":")[1].trim());
+                    Dummy_Data.setBrand(responseParts[7].split(":")[1].trim());
+                    Dummy_Data.setCategory(responseParts[8].split(":")[1].trim());
 
-                    String[] thumbnailsArray = responseParts[8].split(":");
+                    String[] thumbnailsArray = responseParts[9].split(":")[1].replaceAll("\"", "").trim().split(",");;
                     Dummy_Data.setThumbnail(Arrays.asList(thumbnailsArray));
 
-                    String[] imagesArray = responseParts[9].split(":");
+                    String[] imagesArray = responseParts[10].split(":")[1].replaceAll("\"", "").trim().split(",");;
                     Dummy_Data.setImages(Arrays.asList(imagesArray));
 
-                   productRepo.save(Dummy_Data);
+                    productRepo.save(Dummy_Data);
+
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
