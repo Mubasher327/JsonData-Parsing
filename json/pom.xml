@@ -11,7 +11,7 @@
 	<groupId>com.example</groupId>
 	<artifactId>DummyJson</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Ecommerece.System</name>
+	<name>Json-Data-Parsing</name>
 	<description>Project for JAVA</description>
 	<properties>
 		<java.version>19</java.version>
