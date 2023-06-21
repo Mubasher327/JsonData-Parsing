@@ -10,6 +10,8 @@ import java.math.BigDecimal;
 import java.net.URL;
 import java.util.Arrays;
 
+import static org.aspectj.util.LangUtil.split;
+
 @Service
 public class ProductService {
     @Autowired
@@ -23,6 +25,7 @@ public class ProductService {
                     String jsonData = fetchJsonData(apiUrl);
 
                     String[] responseParts = jsonData.split(",");
+
                     for(String val :responseParts){
                         System.out.println(val);
                     }
@@ -51,7 +54,6 @@ public class ProductService {
                     e.printStackTrace();
                 }
             }
-
             private String fetchJsonData(String apiUrl) throws IOException {
                 StringBuilder jsonData = new StringBuilder();
                 URL url = new URL(apiUrl);
